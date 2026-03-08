@@ -1,9 +1,10 @@
 from flask import Flask, render_template, jsonify, request
+import os
 import requests
 
 charge_app = Flask(__name__)
 
-NREL_API_KEY = "EgIamXpg9HecDeyNbFaMaxM1nTbiewuMWyHfQQwd"
+NREL_API_KEY = os.environ.get("NREL_API_KEY")
 
 
 @charge_app.route("/")
